@@ -20,10 +20,8 @@ public class BetterLogin {
 		 driver.findElement(By.id("login_Email")).sendKeys("sukesh515@gmail.com");
 		 driver.findElement(By.id("login_Password")).sendKeys("Hyundai515");
 		 driver.findElement(By.id("login")).click();
-		 driver.findElement(By.linkText("View My Bookings")).click();
-		 driver.close();
-		 
-		 
+		 driver.findElement(By.linkText("Make a Booking")).click();
+		 driver.findElement(By.xpath("//input[@value='329']")).isSelected();
 			
 
 		 
