@@ -23,7 +23,7 @@ public class BetterLogin {
 		 driver.findElement(By.linkText("View My Bookings")).click();
 		 
 		 
-		 
+		 driver.findElement(By.linkText("View My Bookings")).click();
 		 System.out.println(driver.getTitle());
 		 
 			
