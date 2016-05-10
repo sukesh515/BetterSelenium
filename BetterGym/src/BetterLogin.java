@@ -21,12 +21,9 @@ public class BetterLogin {
 		 driver.findElement(By.id("login_Password")).sendKeys("Hyundai515");
 		 driver.findElement(By.id("login")).click();
 		 driver.findElement(By.linkText("View My Bookings")).click();
-		 driver.findElement(By.linkText("View My Bookings")).click();
+		 driver.close();
 		 
-		
-		 System.out.println(driver.getTitle());
 		 
-			
 			
 
 		 
