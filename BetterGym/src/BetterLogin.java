@@ -80,10 +80,20 @@ public class BetterLogin {
      		  
 		//  Bet.waitUntilElementExists(By.xpath(".//*[@id='bottomsubmit']"), 300, 6);
 		 		  
+		  
 		  System.out.println("Clicking Submit Button ");
 		     Thread.sleep(3220L);
 		  
 		driver.findElement(By.xpath(".//*[@id='bottomsubmit']")).click();
+		
+		Thread.sleep(3220L);
+		
+		driver.findElement(By.xpath(".//*[@id='TB_window']")).click();
+		
+		
+		driver.switchTo().frame("TB_iframeContent");
+		
+		driver.findElement(By.xpath(".//*[@id='slot250491']")).click();
 		
 		driver.close();
 		
