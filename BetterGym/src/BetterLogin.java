@@ -166,14 +166,9 @@ public class BetterLogin {
 	            break;
 	        } catch (Exception e) {
 	        }
-	    System.out.println("The searched element was not found after  foundElement");
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }
+	
+	
+	
+	
