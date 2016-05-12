@@ -119,6 +119,8 @@ public class BetterLogin {
 		
 		System.out.println("This will complete the Booking ");
 		
+		driver.findElement(By.linkText("Use Voucher")).click();
+		
 		driver.findElement(By.linkText("Complete")).click();
 		driver.findElement(By.linkText("Continue")).click();
 		
