@@ -1,6 +1,7 @@
 package PageObject;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
@@ -13,7 +14,11 @@ public class TestLogin {
 	
 	public void LoginBet() throws InterruptedException {
 		
-		WebDriver driver = new FirefoxDriver();
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+	//	WebDriver driver = new FirefoxDriver();
 		
 		driver.get("https://better.legendonlineservices.co.uk/enterprise/account/login");
 		
