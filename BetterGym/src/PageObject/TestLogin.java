@@ -20,7 +20,7 @@ public class TestLogin {
 		
 		Properties prop = new Properties();
 		
-		 FileInputStream fil = new FileInputStream("C:\\Users\\IBM_ADMIN\\git\\BetterSelenium\\LogBetter\\src\\datadriven.properties");
+		FileInputStream fil = new FileInputStream(System.getProperty("user.dir")+ "\\src\\datadriven.properties");
 		
 		//FileInputStream fil = new FileInputStream("datadriven.properties");
 		
