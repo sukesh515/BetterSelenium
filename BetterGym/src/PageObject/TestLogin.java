@@ -21,7 +21,7 @@ System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Document
 		
 		WebDriver driver = new ChromeDriver();
 		
-	//	WebDriver driver = new FirefoxDriver();
+	//WebDriver driver = new FirefoxDriver();
 		
 		Properties prop = new Properties();
 		
