@@ -1,26 +1,36 @@
-package PageObject;
+package TestCases;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.junit.Test;
+
+
+
+
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import PageObject.LoginPageBetter;
 
 
 public class TestLogin {
 	
+	static WebDriver driver;
 	
 	@Test
 	
 	public void LoginBet() throws InterruptedException, IOException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
 		
-System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
-		
-		WebDriver driver = new ChromeDriver();
-		
+		driver = new ChromeDriver();
+
+
+LoginPageBetter lp = new LoginPageBetter(driver);
 	//WebDriver driver = new FirefoxDriver();
 		
 		Properties prop = new Properties();
@@ -34,14 +44,20 @@ System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Document
 
 		driver.get("https://better.legendonlineservices.co.uk/enterprise/account/login");
 		
-		LoginPageBetter lp = new LoginPageBetter(driver);
+		
 		
 		lp.username().sendKeys(prop.getProperty("username"));
 		lp.Password().sendKeys(prop.getProperty("password"));
 		
 		lp.Login().click();
-		Thread.sleep(3220L);
+        
+		Thread.sleep(3340L);
 		lp.Logout().click();
+	}
+		
+	
+	   
+		
 		
 		
 		/*MakeBookingPage  makeb = new MakeBookingPage(driver);
@@ -64,8 +80,8 @@ System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Document
 		makeb.bookingsubmit().click();
 		*/
 		
-	}
-		
 	
-
+		
 }
+
+
