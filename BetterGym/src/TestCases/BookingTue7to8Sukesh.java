@@ -4,15 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-
-
-
-
-
-
-
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,11 +24,11 @@ public class BookingTue7to8Sukesh {
 	@Test
 	
 	public void LoginBet() throws InterruptedException, IOException {
-		/*System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
 		
-		driver = new ChromeDriver()*/;
-
-		WebDriver driver = new FirefoxDriver();
+		driver = new ChromeDriver();
+		
+		// WebDriver driver = new FirefoxDriver();
         LoginPageBetter lp = new LoginPageBetter(driver);
 	
 		
@@ -54,8 +45,8 @@ public class BookingTue7to8Sukesh {
 		
 		driver.manage().window().maximize();
 		
-		lp.username().sendKeys(prop.getProperty("username"));
-		lp.Password().sendKeys(prop.getProperty("password"));
+		lp.username().sendKeys(prop.getProperty("usernamesu"));
+		lp.Password().sendKeys(prop.getProperty("passwordsu"));
 		
 		lp.Login().click();
         

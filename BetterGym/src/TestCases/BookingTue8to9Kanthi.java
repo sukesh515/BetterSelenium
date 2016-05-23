@@ -54,8 +54,8 @@ public class BookingTue8to9Kanthi {
 		
 		driver.manage().window().maximize();
 		
-		lp.username().sendKeys(prop.getProperty("username"));
-		lp.Password().sendKeys(prop.getProperty("password"));
+		lp.username().sendKeys(prop.getProperty("usernameka"));
+		lp.Password().sendKeys(prop.getProperty("passwordka"));
 		
 		lp.Login().click();
         
@@ -84,7 +84,7 @@ public class BookingTue8to9Kanthi {
 		SlotsAvailabilityFrame  sa = new SlotsAvailabilityFrame(driver);
 		
 		sa.SwitchtoFrame();
-		//sa.ChoosingDateandTime().click();
+		
 		driver.findElement(By.xpath(prop.getProperty("Tue8to9"))).click();
 		
 				
@@ -104,6 +104,7 @@ public class BookingTue8to9Kanthi {
 		  bc.BookingComplete().click();
 		  bc.ContiuetoHomePage().click();
 		  
+		  driver.close();
 		  		
 
 		
