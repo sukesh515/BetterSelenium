@@ -104,6 +104,7 @@ public class BookingTue7to8Sukesh {
 		  bc.BookingComplete().click();
 		  bc.ContiuetoHomePage().click();
 		  
+		  // Closing Driver
 		  driver.close();
 		  		
 
