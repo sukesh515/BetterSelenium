@@ -11,7 +11,7 @@ public class Logout  {
 	@Test
 	public void BetterLogou(){
 	
-	TestLogin.driver.close();
+	TestBookingMain.driver.close();
 		
 	System.out.println("driver closed");  
 	
