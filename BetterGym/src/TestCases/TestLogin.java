@@ -9,13 +9,21 @@ import java.util.Properties;
 
 
 
+
+
+
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import PageObject.BookingCompletionPage;
 import PageObject.LoginPageBetter;
+import PageObject.MakeBookingPage;
+import PageObject.SlotsAvailabilityFrame;
 
 
 public class TestLogin {
@@ -25,13 +33,13 @@ public class TestLogin {
 	@Test
 	
 	public void LoginBet() throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
+		/*System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
 		
-		driver = new ChromeDriver();
+		driver = new ChromeDriver()*/;
 
-
-LoginPageBetter lp = new LoginPageBetter(driver);
-	//WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new FirefoxDriver();
+        LoginPageBetter lp = new LoginPageBetter(driver);
+	
 		
 		Properties prop = new Properties();
 		
@@ -44,7 +52,7 @@ LoginPageBetter lp = new LoginPageBetter(driver);
 
 		driver.get("https://better.legendonlineservices.co.uk/enterprise/account/login");
 		
-		
+		driver.manage().window().maximize();
 		
 		lp.username().sendKeys(prop.getProperty("username"));
 		lp.Password().sendKeys(prop.getProperty("password"));
@@ -52,15 +60,9 @@ LoginPageBetter lp = new LoginPageBetter(driver);
 		lp.Login().click();
         
 		Thread.sleep(3340L);
-		lp.Logout().click();
-	}
 		
 	
-	   
-		
-		
-		
-		/*MakeBookingPage  makeb = new MakeBookingPage(driver);
+	    MakeBookingPage  makeb = new MakeBookingPage(driver);
 		
 		makeb.MakeBooking().click();
 		
@@ -78,10 +80,34 @@ LoginPageBetter lp = new LoginPageBetter(driver);
 		
 		Thread.sleep(3220l);
 		makeb.bookingsubmit().click();
-		*/
 		
-	
+		SlotsAvailabilityFrame  sa = new SlotsAvailabilityFrame(driver);
+		
+		sa.SwitchtoFrame();
+		//sa.ChoosingDateandTime().click();
+		driver.findElement(By.xpath(prop.getProperty("Thu6to7"))).click();
+		
+				
+		sa.SwitchtoFrame();
+		sa.AddingtoBasket().click();
+		Thread.sleep(3220l);
+		
+		driver.navigate().refresh();
+		
+		BookingCompletionPage bc = new BookingCompletionPage(driver);
+		
+		// This is to click the Basket after refresh
+		
+		driver.findElement(By.xpath(".//*[@id='submenu']/ul/li[12]/a")).click();
+		
+		  bc.UsingVoucher().click();
+		  bc.BookingComplete().click();
+		  bc.ContiuetoHomePage().click();
+		  
+		  		
+
 		
 }
 
 
+}
