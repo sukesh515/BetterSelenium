@@ -9,6 +9,7 @@ import java.util.Properties;
 
 
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,6 +17,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import PageObject.LoginPageBetter;
+import PageObject.MakeBookingPage;
 
 
 public class TestLogin {
@@ -52,15 +54,11 @@ LoginPageBetter lp = new LoginPageBetter(driver);
 		lp.Login().click();
         
 		Thread.sleep(3340L);
-		lp.Logout().click();
-	}
-		
+		// lp.Logout().click();
 	
-	   
+				
 		
-		
-		
-		/*MakeBookingPage  makeb = new MakeBookingPage(driver);
+		MakeBookingPage  makeb = new MakeBookingPage(driver);
 		
 		makeb.MakeBooking().click();
 		
@@ -78,10 +76,10 @@ LoginPageBetter lp = new LoginPageBetter(driver);
 		
 		Thread.sleep(3220l);
 		makeb.bookingsubmit().click();
-		*/
-		
+	
+	
 	
 		
 }
 
-
+}
