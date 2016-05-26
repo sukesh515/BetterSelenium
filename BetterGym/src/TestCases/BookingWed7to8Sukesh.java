@@ -4,15 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-
-
-
-
-
-
-
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,18 +17,18 @@ import PageObject.MakeBookingPage;
 import PageObject.SlotsAvailabilityFrame;
 
 
-public class BookingTue8to9Kanthi {
+public class BookingWed7to8Sukesh {
 	
 	static WebDriver driver;
 	
 	@Test
 	
 	public void LoginBet() throws InterruptedException, IOException {
-		/*System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sukeshswathi\\Documents\\TarunSelenium\\chromedriver_win32\\chromedriver.exe");
 		
-		driver = new ChromeDriver()*/;
-
-		WebDriver driver = new FirefoxDriver();
+		driver = new ChromeDriver();
+		
+		// WebDriver driver = new FirefoxDriver();
         LoginPageBetter lp = new LoginPageBetter(driver);
 	
 		
@@ -54,8 +45,8 @@ public class BookingTue8to9Kanthi {
 		
 		driver.manage().window().maximize();
 		
-		lp.username().sendKeys(prop.getProperty("username"));
-		lp.Password().sendKeys(prop.getProperty("password"));
+		lp.username().sendKeys(prop.getProperty("usernamesu"));
+		lp.Password().sendKeys(prop.getProperty("passwordsu"));
 		
 		lp.Login().click();
         
@@ -65,10 +56,10 @@ public class BookingTue8to9Kanthi {
 	    MakeBookingPage  makeb = new MakeBookingPage(driver);
 		
 		makeb.MakeBooking().click();
-		
+		driver.findElement(By.xpath(".//*[@id='contentWrapper']/div[2]/div/div[2]/div[1]/form/div[3]/label/input")).click();
 		makeb.AvoneilCheckbox().click();
 				
-		makeb.AvoneilCheckbox().click();
+		//makeb.AvoneilCheckbox().click();
 		
 		Thread.sleep(3220l);
 		
@@ -85,7 +76,7 @@ public class BookingTue8to9Kanthi {
 		
 		sa.SwitchtoFrame();
 		//sa.ChoosingDateandTime().click();
-		driver.findElement(By.xpath(prop.getProperty("Tue8to9"))).click();
+		driver.findElement(By.xpath(prop.getProperty("Wed7to8"))).click();
 		
 				
 		sa.SwitchtoFrame();
@@ -104,6 +95,8 @@ public class BookingTue8to9Kanthi {
 		  bc.BookingComplete().click();
 		  bc.ContiuetoHomePage().click();
 		  
+		  // Closing Driver
+		  driver.close();
 		  		
 
 		

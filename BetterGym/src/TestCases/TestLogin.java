@@ -26,7 +26,7 @@ import PageObject.MakeBookingPage;
 import PageObject.SlotsAvailabilityFrame;
 
 
-public class BookingTue8to9Kanthi {
+public class TestLogin {
 	
 	static WebDriver driver;
 	
@@ -85,7 +85,7 @@ public class BookingTue8to9Kanthi {
 		
 		sa.SwitchtoFrame();
 		//sa.ChoosingDateandTime().click();
-		driver.findElement(By.xpath(prop.getProperty("Tue8to9"))).click();
+		driver.findElement(By.xpath(prop.getProperty("Thu6to7"))).click();
 		
 				
 		sa.SwitchtoFrame();

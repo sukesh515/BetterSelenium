@@ -26,7 +26,7 @@ import PageObject.MakeBookingPage;
 import PageObject.SlotsAvailabilityFrame;
 
 
-public class BookingTue8to9Kanthi {
+public class BookingWed8to9Kanthi {
 	
 	static WebDriver driver;
 	
@@ -37,7 +37,7 @@ public class BookingTue8to9Kanthi {
 		
 		driver = new ChromeDriver()*/;
 
-		WebDriver driver = new FirefoxDriver();
+		 driver = new FirefoxDriver();
         LoginPageBetter lp = new LoginPageBetter(driver);
 	
 		
@@ -54,8 +54,8 @@ public class BookingTue8to9Kanthi {
 		
 		driver.manage().window().maximize();
 		
-		lp.username().sendKeys(prop.getProperty("username"));
-		lp.Password().sendKeys(prop.getProperty("password"));
+		lp.username().sendKeys(prop.getProperty("usernameka"));
+		lp.Password().sendKeys(prop.getProperty("passwordka"));
 		
 		lp.Login().click();
         
@@ -65,10 +65,10 @@ public class BookingTue8to9Kanthi {
 	    MakeBookingPage  makeb = new MakeBookingPage(driver);
 		
 		makeb.MakeBooking().click();
-		
+		driver.findElement(By.xpath(".//*[@id='contentWrapper']/div[2]/div/div[2]/div[1]/form/div[3]/label/input")).click();
 		makeb.AvoneilCheckbox().click();
 				
-		makeb.AvoneilCheckbox().click();
+		//makeb.AvoneilCheckbox().click();
 		
 		Thread.sleep(3220l);
 		
@@ -84,8 +84,8 @@ public class BookingTue8to9Kanthi {
 		SlotsAvailabilityFrame  sa = new SlotsAvailabilityFrame(driver);
 		
 		sa.SwitchtoFrame();
-		//sa.ChoosingDateandTime().click();
-		driver.findElement(By.xpath(prop.getProperty("Tue8to9"))).click();
+		
+		driver.findElement(By.xpath(prop.getProperty("Wed8to9"))).click();
 		
 				
 		sa.SwitchtoFrame();
@@ -104,6 +104,7 @@ public class BookingTue8to9Kanthi {
 		  bc.BookingComplete().click();
 		  bc.ContiuetoHomePage().click();
 		  
+		  driver.close();
 		  		
 
 		
