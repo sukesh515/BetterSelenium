@@ -25,6 +25,8 @@ public class TestBroe extends BrowserSelection {
 		
 		lp.Login().click();
 		
+		driver.close();
+		
 		
 	}
 	
